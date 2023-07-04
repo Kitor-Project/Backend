@@ -1,0 +1,33 @@
+###
+POST http://localhost:3000/wishList
+Content-Type: application/json
+
+{
+    "wishList":{
+        "user": "64819f95fc4557feb072fb8f",
+        "games": ["648196620879148f7bf7809f","648198328f149162b9474ede"]
+    }
+}
+
+###
+GET http://localhost:3000/wishList
+
+
+###
+DELETE http://localhost:3000/wishList
+Content-Type: application/json
+
+{
+    "id":"64819f54fc4557feb072fb84"
+}
+
+###
+PATCH http://localhost:3000/wishList
+Content-Type: application/json
+
+{
+    "id":"64819f95fc4557feb072fb8f",
+    "wishList": {
+        "games": ["648196620879148f7bf7809f","648198328f149162b9474ede"]
+    }
+}
