@@ -1,0 +1,45 @@
+###
+GET http://localhost:3000/game
+
+###
+POST http://localhost:3000/game
+Content-Type: application/json
+
+{
+    "game":{
+        "id": "250260",
+        "name": "Jazzpunk: Director's Cut",
+        "description": "Jazzpunk is a comedy adventure set in an alternate reality Cold War World, plagued with corporate espionage, CyberCrime, and sentient martinis.",
+        "backGroundImage":"https://cdn.akamai.steamstatic.com/steam/apps/250260/header.jpg?t=1667492634",
+        "images": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/250260/ss_0c72ab6bc43cee0a9502ead898dcf36b31d028c0.600x338.jpg?t=1667492634",
+         "https://cdn.akamai.steamstatic.com/steam/apps/250260/ss_f594f32c973cc920d24fc3fe7c2658b847313acf.600x338.jpg?t=1667492634",
+         "https://cdn.akamai.steamstatic.com/steam/apps/250260/ss_5898a6e767767ea907d3b8ec8cfa9dc31086de47.600x338.jpg?t=1667492634",
+         "https://cdn.akamai.steamstatic.com/steam/apps/250260/ss_2ec25ac0f457de955a82b654d3219a7ea618618e.600x338.jpg?t=1667492634"
+         ],
+        "price": 14.99,
+        "onSale": false,
+        "numberOfPurchase": 0,
+        "video": "http://cdn.akamai.steamstatic.com/steam/apps/2030786/movie480.webm?t=1497552165",
+        "category": ["64819abbaa143114d380d1d9"]
+    }
+}
+
+###
+DELETE http://localhost:3000/game
+Content-Type: application/json
+
+{
+    "id":"64818f15ccde7522b99dd208"
+}
+
+###
+PATCH http://localhost:3000/game
+Content-Type: application/json
+
+{
+    "id" : "648196620879148f7bf7809f",
+    "game":{
+        "category": ["647f1d53a07c5776ae4d032d"]
+    }
+}
