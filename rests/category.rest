@@ -1,0 +1,43 @@
+###
+GET http://localhost:3000/category/Featured
+
+
+###
+PATCH http://localhost:3000/category
+Content-Type: application/json
+
+{
+    "id":"64819ad5aa143114d380d1db",
+        "category":{
+        "name":"Special Offers",
+        "games":[
+        "64819ce6d7920ee449405445",
+        "64819d77f26aa81130dc769b",
+        "64819dc21b111119b1b6ed21",
+        "64819e11a41079e6bc03abb0",
+        "648196620879148f7bf7809f",
+        "648198328f149162b9474ede",
+        "64819dc21b111119b1b6ed21",
+        "64819ce6d7920ee449405445"]
+    }
+}
+
+
+###
+DELETE http://localhost:3000/category
+Content-Type: application/json
+
+{
+    "id":"649341043237a10cb3249b98"
+}
+
+###
+POST http://localhost:3000/category
+Content-Type: application/json
+
+{
+    "category":{
+        "name":"Featured",
+        "games":["648196620879148f7bf7809f","648198328f149162b9474ede","64819ce6d7920ee449405445","64819dc21b111119b1b6ed21"]
+    }
+}
