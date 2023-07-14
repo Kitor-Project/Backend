@@ -1,0 +1,35 @@
+###
+POST http://localhost:3000/order
+Content-Type: application/json
+
+{
+    "order":{
+        "user": "64819f95fc4557feb072fb8f",
+        "games": ["648196620879148f7bf7809f","648198328f149162b9474ede", "648198bc0cfa3891aeaf080f","6481994db244a45a0761a9f8"],
+        "orderNumber": 3
+    }
+}
+
+###
+GET http://localhost:3000/order
+
+
+###
+DELETE http://localhost:3000/order
+Content-Type: application/json
+
+{
+    "id":"647f58608da231e16fe55727"
+}
+
+###
+PATCH http://localhost:3000/order
+Content-Type: application/json
+
+{
+    "id":"647f315af2d09aaf92a2cf32",
+    "order":{
+        "user": "647ee6d2cb25af8b29898014",
+        "games": ["647f19d1a129054fed398f8d"]
+    }
+}
