@@ -1,0 +1,10 @@
+POST http://localhost:3000/point
+Content-Type: application/json
+
+{
+  "name": "Point 5",
+  "latitude": 31.7719,
+  "longitude": 35.2170
+}
+
+

@@ -1,0 +1,38 @@
+###
+GET http://localhost:3000/profile
+
+###
+GET http://localhost:3000/profile/email/alon@walla.com
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+      "email": "tamir@walla.com",
+      "password": "123456"
+}
+
+###
+PATCH http://localhost:3000/profile/update/
+Content-Type: application/json
+
+{
+      "id": "64819f95fc4557feb072fb8f",
+      "user":{
+            "isAdmin": true,
+            "cart": [
+            "64819ce6d7920ee449405445",
+            "64819d77f26aa81130dc769b",
+            "64819dc21b111119b1b6ed21",
+            "64819e11a41079e6bc03abb0"]
+      }
+}
+
+###
+DELETE  http://localhost:3000/profile/delete/
+Content-Type: application/json
+
+{
+      "id": "647ee6d2cb25af8b29898014"
+}
