@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// This schema represent the location of a store on a map
 const pointSchema = new mongoose.Schema({
   name: {
     type: String,

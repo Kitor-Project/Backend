@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// create the schema for a user - include ref to  games id in fileds: cart, wishList,orders
 const userSchema = new Schema({
   name: {
     type: String,

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// create the schema for a game
 const gameSchema = new Schema({
   name: {
     type: String,
@@ -39,6 +40,8 @@ const gameSchema = new Schema({
   publishers: {
     type: [String],
   },
+
+  // define an array of categories which related to the game.
   category: [
     {
       type: mongoose.Schema.Types.ObjectId,

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// create the schema for an order - contains: user , array of games and order deatils.
 const orderSchema = new Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
