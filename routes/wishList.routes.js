@@ -1,3 +1,4 @@
+// define the routs for the wishlist.
 const express = require("express");
 const wishListController = require("../controllers/wishList.controller");
 const router = express.Router();

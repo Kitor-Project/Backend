@@ -1,8 +1,12 @@
+// define the routs- and the necessary actions (instead of controller) - for the auth.
+
 const express = require("express");
 const passport = require("passport");
 const bcrypt = require("bcrypt");
 const User = require("../models/userSchema");
+// defines the user validatons( email, name, image....)
 const authMiddleware = require("../utills/auth.middleware");
+
 const router = express.Router();
 
 const initializePassport = require("../config/passport-config");
@@ -20,16 +24,6 @@ router.get("/login", authMiddleware.checkNotAuthenticated, (req, res) => {
   res.render("login.ejs");
 });
 
-// router.post(
-//   "/login",
-//   authMiddleware.checkNotAuthenticated,
-//   authMiddleware.validateLogin,
-//   passport.authenticate("local", {
-//     successRedirect: "/",
-//     failureRedirect: "/login",
-//     failureFlash: true,
-//   })
-// );
 
 router.post(
   "/login",
@@ -47,7 +41,6 @@ router.get("/register", authMiddleware.checkNotAuthenticated, (req, res) => {
 
 router.post(
   "/register",
-  // authMiddleware.checkNotAuthenticated,
   authMiddleware.validateFields,
   async (req, res) => {
     try {

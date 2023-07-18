@@ -1,3 +1,5 @@
+// define the routs for the order of the server.
+
 const express = require("express");
 const ordersController = require("../controllers/orders.controller");
 const router = express.Router();

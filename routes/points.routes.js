@@ -1,3 +1,5 @@
+// define the routs and the actions for a point object.
+
 const express = require("express");
 const router = express.Router();
 const Point = require("../models/pointSchema");
@@ -14,7 +16,9 @@ router.post("/", (req, res) => {
 
   newPoint
     .save()
+    //if save method successed
     .then(() => res.status(201).json({ message: "Point saved successfully" }))
+    // else
     .catch((error) =>
       res
         .status(500)

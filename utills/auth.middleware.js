@@ -1,3 +1,5 @@
+// defines the user validatons( email, name, image....)
+
 const passport = require("passport");
 const bcrypt = require("bcrypt");
 const User = require("../models/userSchema");
