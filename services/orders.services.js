@@ -1,3 +1,6 @@
+// Pull Order data from DB 
+
+// define the ref to Order schema
 const Order = require("../models/orderSchema");
 
 const getAllOrders = async () => {
@@ -6,9 +9,7 @@ const getAllOrders = async () => {
     if (orders) {
       return orders;
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) { }
 };
 
 const getOrderById = async (id) => {
@@ -18,7 +19,6 @@ const getOrderById = async (id) => {
       return order;
     }
   } catch (err) {
-    console.log(err);
   }
 };
 
@@ -34,7 +34,6 @@ const createOrder = async (order) => {
       return savedOrder;
     }
   } catch (error) {
-    console.log(error);
   }
 };
 
@@ -45,7 +44,6 @@ const updateOrder = async (id, order) => {
       return updatedOrder;
     }
   } catch (error) {
-    console.log(error);
   }
 };
 
@@ -56,7 +54,6 @@ const deleteOrderById = async (id) => {
       return deletedOrder;
     }
   } catch (error) {
-    console.log(error);
   }
 };
 

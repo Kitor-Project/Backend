@@ -4,7 +4,6 @@ if (process.env.NODE_ENV !== "production") {
 
 // Install packages
 const express = require("express");
-const app = express();
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
@@ -16,9 +15,10 @@ const cors = require("cors");
 const User = require("./models/userSchema");
 
 //Adding ejs
+const app = express();
 app.set("view-engine", "ejs");
 
-//Initialize Server
+//Initialize Server. allowing the apllication to use : flash, passport libary
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(
@@ -45,16 +45,18 @@ app.use("/wishList", require("./routes/wishList.routes"));
 app.use("/statistic", require("./routes/statistics.routes"));
 app.use("/point", require("./routes/points.routes"));
 
+// define the communication between the host and server
 const server = require("http").createServer(app);
 const socketio = require("socket.io");
 const io = socketio(server);
 const { handleClient } = require("./utills/socket.utils");
 handleClient(io);
 
+// using socket comunicatin for the chat.
 server.listen(3005, () => {
   console.log("Socket Server is running on port 3005");
 });
-
+//get the requests from  front  in port 3000
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
   mongoConnect();

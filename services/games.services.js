@@ -1,3 +1,6 @@
+// Pull games data from DB 
+
+// define the ref to games schema
 const Game = require("../models/gameSchema");
 
 const getAllGames = async () => {

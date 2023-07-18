@@ -1,3 +1,6 @@
+// Pull users data from DB 
+
+// define the ref to users schema
 const User = require("../models/userSchema");
 
 const getUserByEmail = async (email) => {

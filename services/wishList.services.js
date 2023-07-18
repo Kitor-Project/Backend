@@ -1,3 +1,6 @@
+// Pull wishList data from DB 
+
+// define the ref to wishList schema
 const WishList = require("../models/wishListSchema");
 
 const getAllwishLists = async () => {
@@ -7,7 +10,6 @@ const getAllwishLists = async () => {
       return wishLists;
     }
   } catch (error) {
-    console.log(error);
   }
 };
 
@@ -31,7 +33,6 @@ const createWishList = async (wishList) => {
       return savedwishList;
     }
   } catch (error) {
-    console.log(error);
   }
 };
 const updateWishList = async (id, wishList) => {
@@ -44,7 +45,6 @@ const updateWishList = async (id, wishList) => {
       return updatedwishList;
     }
   } catch (error) {
-    console.log(error);
   }
 };
 
@@ -55,7 +55,7 @@ const deleteWishListById = async (id) => {
       return deletedwishList;
     }
   } catch (error) {
-    console.log(error);
+
   }
 };
 
