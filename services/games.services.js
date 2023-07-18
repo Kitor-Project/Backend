@@ -1,4 +1,4 @@
-const Game = require("../../../ApplicationBackend/models/gameSchema");
+const Game = require("../models/gameSchema");
 
 const getAllGames = async () => {
   try {

@@ -1,5 +1,5 @@
 const express = require("express");
-const gameController = require("../../../ApplicationBackend/controllers/games.controller");
+const gameController = require("../controllers/games.controller");
 const router = express.Router();
 
 router.get("/", gameController.getAllGames);
