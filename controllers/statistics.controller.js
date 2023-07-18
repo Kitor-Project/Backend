@@ -1,7 +1,12 @@
 const Order = require("../models/orderSchema");
 
-/**
- * @description statistical data in graphs based on the average cumulative amount of purchases per month
+/** average of the purchases number  per moth or year
+ * 
+ * @description Calculates statistical data in graphs based on the average cumulative amount of purchases per month.
+ * Retrieves the average amount of orders grouped by year and month.
+ * Sorts the results in ascending order by year and month.
+ * Constructs an array of months and an array of average amounts.
+ * Sends a response with the constructed data.
  */
 const cumlatioveAmountPerMounth = async (req, res) => {
   try {
@@ -42,8 +47,13 @@ const cumlatioveAmountPerMounth = async (req, res) => {
   }
 };
 
-/**
- * @description total number of purchases per month
+/** total of the number of purchases per month
+ * 
+ * @description Calculates the total number of purchases per month.
+ * Retrieves the count of orders grouped by year and month.
+ * Sorts the results in ascending order by year and month.
+ * Constructs an array of months and an array of totals.
+ * Sends a response with the constructed data.
  */
 const totalNumberOfPurchasesPerMonth = async (req, res) => {
   try {

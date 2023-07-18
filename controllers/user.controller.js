@@ -1,5 +1,9 @@
 const userService = require("../services/users.services");
 
+/**
+ * Retrieves a user by ID.
+ * Sends a response with the retrieved user.
+ */
 const getUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -10,6 +14,10 @@ const getUserById = async (req, res, next) => {
   }
 };
 
+/**
+ * Retrieves a user by email.
+ * Sends a response with the retrieved user if found, or null if not found.
+ */
 const getUserByEmail = async (req, res, next) => {
   try {
     const { email } = req.params;
@@ -24,6 +32,10 @@ const getUserByEmail = async (req, res, next) => {
   }
 };
 
+/**
+ * Retrieves all users.
+ * Sends a response with the retrieved users.
+ */
 const getAllUsers = async (req, res, next) => {
   try {
     const users = await userService.getAll();
@@ -33,6 +45,11 @@ const getAllUsers = async (req, res, next) => {
   }
 };
 
+/**
+ * Updates a user.
+ * Sends a response with the updated user.
+ * If the updated user is not found, sends an error response with a message indicating an invalid email format.
+ */
 const updateUser = async (req, res, next) => {
   try {
     const { id, user } = req.body;
@@ -46,20 +63,24 @@ const updateUser = async (req, res, next) => {
   }
 };
 
+/**
+ * Deletes a user.
+ * Sends a response with the deleted user.
+ */
 const deleteUser = async (req, res, next) => {
   try {
+    const { id } = req.body;
     const user = await userService.deleteUser(id);
     res.status(200).send(user);
   } catch (err) {
     res.status(400).send("Something went wrong -> deleteUser");
   }
-  const { id } = req.body;
 };
 
 module.exports = {
-  updateUser,
   getUserById,
   getUserByEmail,
   getAllUsers,
+  updateUser,
   deleteUser,
 };
