@@ -1,7 +1,7 @@
 const Order = require("../models/orderSchema");
 
-/** average of the purchases number  per moth or year
- * 
+/** average of the purchases number  per month or year
+ *
  * @description Calculates statistical data in graphs based on the average cumulative amount of purchases per month.
  * Retrieves the average amount of orders grouped by year and month.
  * Sorts the results in ascending order by year and month.
@@ -10,20 +10,27 @@ const Order = require("../models/orderSchema");
  */
 const cumlatioveAmountPerMounth = async (req, res) => {
   try {
+    // The result of the $group stage will include the grouped _id field with the year and month,
+    // as well as the averageAmount field with the calculated average order number for each group.
     const statistics = await Order.aggregate([
       {
+        //The $group stage groups the documents based on the values of the _id field.
         $group: {
+          //The _id field is an object with two fields: year and month.
           _id: {
+            //The year field is calculated using the $year operator, which extracts the year from the purchaseDate field.
             year: { $year: "$purchaseDate" },
+            //The month field is calculated using the $month operator, which extracts the month from the purchaseDate field.
             month: { $month: "$purchaseDate" },
           },
-          averageAmount: { $avg: "$orderNumber" },
+          //Within each group, the $avg operator calculates the average value of the orderNumber field.
+          averageAmount: { $avg: "$orderNumber" }, // Calculate average order number
         },
       },
       {
         $sort: {
-          "_id.year": 1,
-          "_id.month": 1,
+          "_id.year": 1, // Sort by year in ascending order
+          "_id.month": 1, // Sort by month in ascending order
         },
       },
     ]);
@@ -48,7 +55,7 @@ const cumlatioveAmountPerMounth = async (req, res) => {
 };
 
 /** total of the number of purchases per month
- * 
+ *
  * @description Calculates the total number of purchases per month.
  * Retrieves the count of orders grouped by year and month.
  * Sorts the results in ascending order by year and month.
@@ -59,18 +66,19 @@ const totalNumberOfPurchasesPerMonth = async (req, res) => {
   try {
     const statistics = await Order.aggregate([
       {
+        //The $group stage groups the documents based on the values of the _id field.
         $group: {
           _id: {
-            year: { $year: "$purchaseDate" },
-            month: { $month: "$purchaseDate" },
+            year: { $year: "$purchaseDate" }, // Group by year
+            month: { $month: "$purchaseDate" }, // Group by month
           },
-          totalPurchases: { $sum: 1 },
+          totalPurchases: { $sum: 1 }, // Count the number of orders
         },
       },
       {
         $sort: {
-          "_id.year": 1,
-          "_id.month": 1,
+          "_id.year": 1, // Sort by year in ascending order
+          "_id.month": 1, // Sort by month in ascending order
         },
       },
     ]);
