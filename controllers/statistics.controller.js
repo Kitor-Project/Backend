@@ -29,7 +29,7 @@ const cumlatioveAmountPerMounth = async (req, res) => {
       },
       {
         $sort: {
-          "_id.year": 1, // Sort by year in ascending order
+          "_id.year": 1, // Sort by year in ascending order (1..2..)
           "_id.month": 1, // Sort by month in ascending order
         },
       },
@@ -77,7 +77,7 @@ const totalNumberOfPurchasesPerMonth = async (req, res) => {
       },
       {
         $sort: {
-          "_id.year": 1, // Sort by year in ascending order
+          "_id.year": 1, // Sort by year in ascending order (1..2..)
           "_id.month": 1, // Sort by month in ascending order
         },
       },
