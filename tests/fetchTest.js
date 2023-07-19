@@ -26,16 +26,16 @@ async function fetchGameDetails(appId) {
         } = gameData.data;
 
         // Process the extracted fields as needed
-        console.log("Name:", name);
-        console.log("ID:", id);
-        console.log("Description:", description);
-        console.log("Header Image:", headerImage);
-        console.log("Screenshots:", screenshots);
-        console.log("Price:", price);
-        console.log("Movies:", movies);
-        console.log("Developers:", developers);
-        console.log("Publishers:", publishers);
-        console.log("Release Date:", releaseDate);
+        // console.log("Name:", name);
+        // console.log("ID:", id);
+        // console.log("Description:", description);
+        // console.log("Header Image:", headerImage);
+        // console.log("Screenshots:", screenshots);
+        // console.log("Price:", price);
+        // console.log("Movies:", movies);
+        // console.log("Developers:", developers);
+        // console.log("Publishers:", publishers);
+        // console.log("Release Date:", releaseDate);
       } else {
         console.error("Error retrieving game data:", gameData);
       }

@@ -41,8 +41,6 @@ function validateLogin(req, res, next) {
     return res.json({ error: "Invalid email format." });
   }
   req.session.user = { email: email, password: password };
-  // TODO --> remove after testing!!
-  console.log(req.session.user);
   next();
 }
 

@@ -148,7 +148,6 @@ const createGame = async (req, res, next) => {
  */
 const updateGame = async (req, res, next) => {
   try {
-    console.log(req.body);
     const { id, game } = req.body;
     const oldGame = await gameService.getGameById(id);
     const updatedGame = await gameService.updateGame(id, game);
@@ -180,7 +179,7 @@ const updateGame = async (req, res, next) => {
   } catch (err) {
     res.status(400).send("Something went wrong -> updateGame");
   }
-}
+};
 
 /**
  * Helper function to check and update user data related to a game.
